@@ -11,7 +11,6 @@ public class FelineGetKittensParametersTest {
 
     private final int input;
     private final int expected;
-    private Feline feline = new Feline();
 
     public FelineGetKittensParametersTest(int input, int expected) {
         this.input = input;

@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class FelineTest {
 
-    private Feline feline = new Feline();
+    private final Feline feline = new Feline();
 
 
     @Test

@@ -18,11 +18,8 @@ public class Lion {
         this.lionDependencyInjection = lionDependencyInjection;
     }
 
-    // ЗАВИСИМОСТЬ (удали потом коммент, Лиза)
-    Feline feline = new Feline();
-
     public int getKittens() {
-        return feline.getKittens();
+        return lionDependencyInjection.getKittens();
     }
 
     public boolean doesHaveMane() {
@@ -30,6 +27,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return lionDependencyInjection.getFood("Хищник");
     }
 }

@@ -7,8 +7,8 @@ import static com.example.AlexLionConstants.*;
 public class AlexLion extends Lion {
 
 
-    public AlexLion(LionDependencyInjection lionDependencyInjection) throws Exception {
-        super("Самец", lionDependencyInjection);
+    public AlexLion(Feline feline) throws Exception {
+        super("Самец", feline);
     }
 
     public List<String> getFriends() {

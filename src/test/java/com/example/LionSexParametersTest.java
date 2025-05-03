@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class LionSexParametersTest {
 
-    private final LionDependencyInjection lionDependencyInjection = Mockito.mock(LionDependencyInjection.class);
+    Feline felineMock = Mockito.mock(Feline.class);
 
     private final boolean expected;
     private final String sex;
@@ -30,7 +30,7 @@ public class LionSexParametersTest {
 
     @Test
     public void shouldReturnCorrectManeStatus() throws Exception {
-        Lion lion = new Lion(sex, lionDependencyInjection);
+        Lion lion = new Lion(sex, felineMock);
         assertEquals(expected, lion.doesHaveMane());
     }
 

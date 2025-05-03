@@ -14,12 +14,12 @@ import static org.junit.Assert.fail;
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
     @Mock
-    private LionDependencyInjection lionDependencyInjection;
+    private Feline felineMock;
 
     @Test
     public void shouldThrowExceptionWhenInvalidSex(){
         try {
-            Lion lion = new Lion("Пол", lionDependencyInjection);
+            Lion lion = new Lion("Пол", felineMock);
             fail("Ожидаемое исключение не выдано");
         } catch (Exception e) {
             assertEquals("Текст отличается от ожидаемого", TEXT_FOR_EXCEPTION_FOR_CONSTRUCTOR_LION, e.getMessage());
@@ -29,15 +29,15 @@ public class LionTest {
 
     @Test
     public void getKittensTest()  throws Exception{
-        Mockito.when(lionDependencyInjection.getKittens()).thenReturn(1);
-        Lion lion = new Lion("Самец", lionDependencyInjection);
+        Mockito.when(felineMock.getKittens()).thenReturn(1);
+        Lion lion = new Lion("Самец", felineMock);
         assertEquals("Количество не совпадает", 1, lion.getKittens());
     }
 
     @Test
     public void getFoodTest() throws Exception {
-        Mockito.when(lionDependencyInjection.getFood("Хищник")).thenReturn(LIST_OF_FOOD_FOR_FELINE);
-        Lion lion = new Lion("Самец", lionDependencyInjection);
+        Mockito.when(felineMock.getFood("Хищник")).thenReturn(LIST_OF_FOOD_FOR_FELINE);
+        Lion lion = new Lion("Самец", felineMock);
         assertEquals("Список продуктов не совпадает", LIST_OF_FOOD_FOR_FELINE, lion.getFood());
     }
 }

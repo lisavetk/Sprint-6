@@ -8,6 +8,9 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
+
+import static com.example.TestsConstants.CATS_SOUND;
+import static com.example.TestsConstants.LIST_OF_FOOD_FOR_FELINE;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -24,14 +27,14 @@ public class CatTest {
 
     @Test
     public void getSoundTest() {
-        assertEquals("Мяу", cat.getSound());
+        assertEquals("Текст не совпадает", CATS_SOUND, cat.getSound());
     }
 
     @Test
     public void getFoodTest() throws Exception {
         Mockito.when(felineMock.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
+        assertEquals("Неверный список продуктов", LIST_OF_FOOD_FOR_FELINE);
         Mockito.verify(felineMock, Mockito.times(1)).eatMeat();
     }
 

@@ -2,8 +2,8 @@ package com.example;
 
 import org.junit.Test;
 
-import java.util.List;
-
+import static com.example.TestsConstants.FAMILY_FELINE;
+import static com.example.TestsConstants.LIST_OF_FOOD_FOR_FELINE;
 import static org.junit.Assert.assertEquals;
 
 public class FelineTest {
@@ -12,17 +12,17 @@ public class FelineTest {
 
     @Test
     public void eatMeatTest() throws Exception {
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
+        assertEquals("Неверный список продуктов", LIST_OF_FOOD_FOR_FELINE, feline.eatMeat());
     }
 
     @Test
     public void getFamilyTest() {
-        assertEquals("Кошачьи", feline.getFamily());
+        assertEquals("Неверное семейство", FAMILY_FELINE, feline.getFamily());
     }
 
     @Test
     public void getKittensNoParametersTest() {
-        assertEquals(1, feline.getKittens());
+        assertEquals("Неверное количество", 1, feline.getKittens());
     }
 
 

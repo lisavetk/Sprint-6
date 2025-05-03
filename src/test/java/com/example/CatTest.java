@@ -34,7 +34,7 @@ public class CatTest {
     public void getFoodTest() throws Exception {
         Mockito.when(felineMock.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
-        assertEquals("Неверный список продуктов", LIST_OF_FOOD_FOR_FELINE);
+        assertEquals("Неверный список продуктов", LIST_OF_FOOD_FOR_FELINE, cat.getFood());
         Mockito.verify(felineMock, Mockito.times(1)).eatMeat();
     }
 

@@ -8,8 +8,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import static com.example.TestsConstants.LIST_OF_FOOD_FOR_FELINE;
 import static com.example.TestsConstants.TEXT_FOR_EXCEPTION_FOR_CONSTRUCTOR_LION;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
@@ -18,13 +17,8 @@ public class LionTest {
 
     @Test
     public void shouldThrowExceptionWhenInvalidSex(){
-        try {
-            Lion lion = new Lion("Пол", felineMock);
-            fail("Ожидаемое исключение не выдано");
-        } catch (Exception e) {
-            assertEquals("Текст отличается от ожидаемого", TEXT_FOR_EXCEPTION_FOR_CONSTRUCTOR_LION, e.getMessage());
-        }
-
+        Exception exception = assertThrows(Exception.class, () -> new Lion("Пол", felineMock));
+        assertEquals("Текст отличается от ожидаемого", TEXT_FOR_EXCEPTION_FOR_CONSTRUCTOR_LION, exception.getMessage());
     }
 
     @Test
